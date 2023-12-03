@@ -24,7 +24,7 @@ def create_aoc_folder(day_number: int):
     os.mkdir(folder_name)
     open(f"{folder_name}/__init__.py", "w").close()
     open(f"{folder_name}/input", "w").close()
-    open(f"{folder_name}/input_example.py", "w").close()
+    open(f"{folder_name}/input_example", "w").close()
     code_file = open(f"{folder_name}/day_{formatted_day_number}.py", "w")
     code_file.write(file_content)
     code_file.close()
