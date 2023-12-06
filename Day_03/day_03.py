@@ -17,7 +17,7 @@ def get_symbols_and_numbers():
     numbers = []
     for i, line in enumerate(lines):
         for ii, char in enumerate(line):
-            if not char.isdigit() and char != '.':
+            if not char.isdigit() and char != ".":
                 symbols.append((i, ii, char))
             if len(numbers) != 0:
                 last_number = numbers[-1]
@@ -30,7 +30,10 @@ def get_symbols_and_numbers():
 
 
 def are_adjacent(symbol, number):
-    return symbol[0] - 1 <= number[0] <= symbol[0] + 1 and number[1][0] - 1 <= symbol[1] <= number[1][1] + 1
+    return (
+        symbol[0] - 1 <= number[0] <= symbol[0] + 1
+        and number[1][0] - 1 <= symbol[1] <= number[1][1] + 1
+    )
 
 
 def part_1():
@@ -45,7 +48,7 @@ def part_1():
 def part_2():
     result = 0
     for symbol in symbols:
-        if symbol[2] != '*':
+        if symbol[2] != "*":
             continue
         adjacent = []
         for number in numbers:
